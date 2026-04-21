@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EMPLEO JOVEN — Newsletter</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --white: #f5f5f0;
+      --green: #2e7d4f;
+      --green-light: #4caf72;
+      --green-pale: #e8f5ee;
+      --gray: #6b6b6b;
+      --gray-light: #e2e2dc;
+      --border: #d4d4cc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--white);
+      color: var(--black);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* ── WRAPPER ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── HEADER ── */
+    header {
+      border-bottom: 3px solid var(--black);
+      padding: 36px 0 24px;
+      position: relative;
+    }
+
+    .header-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 10px;
+    }
+
+    .issue-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    .date-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--gray);
+    }
+
+    .logo {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .logo-text {
+      font-family: 'DM Serif Display', serif;
+      font-size: 52px;
+      line-height: 1;
+      letter-spacing: -1px;
+      color: var(--black);
+    }
+
+    .logo-dot {
+      width: 12px;
+      height: 12px;
+      background: var(--green);
+      border-radius: 50%;
+      margin-bottom: 8px;
+      flex-shrink: 0;
+    }
+
+    .tagline {
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-top: 6px;
+    }
+
+    /* ── INTRO STRIP ── */
+    .intro-strip {
+      background: var(--black);
+      color: var(--white);
+      padding: 18px 24px;
+      margin: 28px 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .intro-strip p {
+      font-size: 13.5px;
+      line-height: 1.55;
+      font-weight: 300;
+    }
+
+    .intro-strip strong {
+      font-weight: 500;
+      color: var(--green-light);
+    }
+
+    .intro-number {
+      font-family: 'DM Serif Display', serif;
+      font-size: 42px;
+      color: var(--green-light);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    /* ── SECTION LABEL ── */
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green);
+      border-top: 1px solid var(--green);
+      padding-top: 8px;
+      margin: 40px 0 20px;
+      display: inline-block;
+    }
+
+    /* ── LEAD STORY ── */
+    .lead-story {
+      border-left: 4px solid var(--green);
+      padding-left: 20px;
+      margin-bottom: 36px;
+    }
+
+    .lead-kicker {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .lead-story h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+
+    .lead-story p {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    .lead-story a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid var(--green-light);
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      display: inline-block;
+      margin-top: 14px;
+    }
+
+    /* ── STAT CARDS ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin: 28px 0 36px;
+      background: var(--border);
+    }
+
+    .stat-card {
+      background: var(--white);
+      padding: 22px 18px;
+    }
+
+    .stat-number {
+      font-family: 'DM Serif Display', serif;
+      font-size: 46px;
+      line-height: 1;
+      color: var(--black);
+      letter-spacing: -1px;
+    }
+
+    .stat-number span {
+      color: var(--green);
+    }
+
+    .stat-label {
+      font-size: 12.5px;
+      color: var(--gray);
+      margin-top: 8px;
+      line-height: 1.45;
+    }
+
+    .stat-source {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      color: #bbb;
+      letter-spacing: 0.08em;
+      margin-top: 10px;
+      text-transform: uppercase;
+    }
+
+    /* ── NEWS ITEMS ── */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .news-item {
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+    }
+
+    .news-item:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .news-index {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--green);
+      padding-top: 3px;
+      letter-spacing: 0.05em;
+    }
+
+    .news-content h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 19px;
+      line-height: 1.25;
+      margin-bottom: 8px;
+      letter-spacing: -0.2px;
+    }
+
+    .news-content p {
+      font-size: 13.5px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .news-content a {
+      display: inline-block;
+      margin-top: 10px;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      text-decoration: none;
+      border-bottom: 1px solid var(--green-light);
+    }
+
+    .news-tag {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: var(--green-pale);
+      color: var(--green);
+      padding: 3px 8px;
+      margin-bottom: 8px;
+    }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight-box {
+      border: 1.5px solid var(--black);
+      padding: 26px 24px;
+      margin: 36px 0;
+      position: relative;
+    }
+
+    .highlight-box::before {
+      content: '"';
+      font-family: 'DM Serif Display', serif;
+      font-size: 80px;
+      line-height: 0.5;
+      color: var(--green-pale);
+      position: absolute;
+      top: 16px;
+      left: 14px;
+    }
+
+    .highlight-box blockquote {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      line-height: 1.4;
+      padding-left: 28px;
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+
+    .highlight-box cite {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--gray);
+      text-transform: uppercase;
+      padding-left: 28px;
+      font-style: normal;
+    }
+
+    /* ── OPPORTUNITY CARD ── */
+    .opportunity-card {
+      background: var(--green);
+      color: var(--white);
+      padding: 28px 24px;
+      margin: 36px 0;
+    }
+
+    .opp-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green-light);
+      margin-bottom: 14px;
+    }
+
+    .opportunity-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 24px;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .opportunity-card p {
+      font-size: 13.5px;
+      line-height: 1.6;
+      opacity: 0.88;
+      margin-bottom: 20px;
+    }
+
+    .opp-cta {
+      display: inline-block;
+      background: var(--white);
+      color: var(--green);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 10px 18px;
+      font-weight: 500;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 36px 0;
+    }
+
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .divider-mark {
+      width: 6px;
+      height: 6px;
+      background: var(--green);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 3px solid var(--black);
+      padding-top: 28px;
+      margin-top: 48px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .footer-col h4 {
+      font-family: 'DM Mono', monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .footer-col p, .footer-col a {
+      font-size: 12px;
+      color: var(--gray);
+      text-decoration: none;
+      line-height: 1.7;
+      display: block;
+    }
+
+    .footer-bottom {
+      padding-top: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      letter-spacing: -0.3px;
+    }
+
+    .footer-logo span {
+      color: var(--green);
+    }
+
+    .footer-legal {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      color: #bbb;
+      letter-spacing: 0.08em;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <header>
+      <div class="header-meta">
+        <span class="issue-tag">Argentina</span>
+        <span class="date-tag">Abril 2026</span>
+      </div>
+      <div class="logo">
+        <div class="logo-text">EMPLEO JOVEN</div>
+        <div class="logo-dot"></div>
+      </div>
+      <p class="tagline">Trabajo, oportunidades y futuro para los jóvenes argentinos</p>
+    </header>
+
+    <!-- NEWS ITEMS -->
+    <span class="section-label">Noticias de la edición</span>
+    <div class="news-list">
+
+      <div class="news-item">
+        <div class="news-content">
+          <span class="news-tag">Infobae · Sociedad</span>
+          <h3>Entre la informalidad y la urgencia de conectar oportunidades</h3>
+          <p>El empleo joven en Argentina atraviesa una crisis silenciosa: brechas educativas que profundizan la desigualdad, informalidad laboral como norma y jóvenes que buscan trabajo sin encontrar puentes hacia el mercado formal. Sin embargo, también emergen casos de éxito que muestran que conectar oportunidades es posible.</p>
+          <a href="https://www.infobae.com/sociedad/2026/03/04/empleo-joven-en-argentina-entre-la-informalidad-las-brechas-educativas-la-urgencia-de-conectar-oportunidades-y-un-caso-de-exito/" target="_blank">Leer nota →</a>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-content">
+          <span class="news-tag">Informalidad · La Gaceta</span>
+          <h3>Alarma por la informalidad juvenil: siete de cada diez sin trabajo registrado</h3>
+          <p>Un informe del Instituto Interdisciplinario de Economía Política de la UBA reveló que el 67,4% de los jóvenes entre 16 y 24 años trabaja sin acceso a ningún derecho laboral formal. La cifra enciende alertas sobre la exclusión estructural de una generación entera del sistema productivo registrado.</p>
+          <a href="https://www.lagaceta.com.ar/nota/1129783/economia/alarma-informalidad-juvenil-siete-cada-10-jovenes-no-tiene-trabajo-registrado.html" target="_blank">Leer nota →</a>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-content">
+          <span class="news-tag">Política & Trabajo · Perfil</span>
+          <h3>"Un 40% de los jóvenes aceptaría menos democracia si hay trabajo"</h3>
+          <p>José Amore advirtió en Canal E que la precariedad laboral está erosionando el vínculo entre los jóvenes y los valores democráticos. La falta de perspectiva económica genera un terreno fértil para el desencanto político, con consecuencias que van más allá del mercado de trabajo.</p>
+          <a href="https://www.perfil.com/noticias/canal-e/en-qr-jose-amore-alerto-un-40-de-los-jovenes-aceptaria-menos-democracia-si-hay-trabajo.phtml" target="_blank">Leer nota →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-mark"></div>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- OPPORTUNITY CTA -->
+    <div class="opportunity-card">
+      <p class="opp-label">↗ Oportunidad destacada</p>
+      <h3>500 Becas para tu primer empleo formal</h3>
+      <p>Si tenés entre 18 y 30 años y estás buscando ingresar al mercado laboral formal, esta convocatoria puede ser tu punto de entrada. Las becas son gratuitas y cubren formación orientada a la empleabilidad real.</p>
+      <a class="opp-cta" href="https://www.forbesargentina.com/liderazgo/lanzan-500-becas-gratuitas-jovenes-buscan-su-primer-empleo-formal-como-inscribirse-n84411" target="_blank">Ver cómo inscribirse</a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-bottom">
+        <div class="footer-logo">EMPLEO<span>·</span>JOVEN</div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
